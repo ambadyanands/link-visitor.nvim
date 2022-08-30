@@ -12,6 +12,7 @@ else
 end
 
 local config = {
+	ask_for_confirmation = true,
 	open_cmd = open_cmd,
 	silent = false,
 }

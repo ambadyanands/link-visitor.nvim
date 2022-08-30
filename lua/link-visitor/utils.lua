@@ -112,7 +112,7 @@ end
 
 ---@param link Link
 function M.visit(link)
-	if confirm("Visit " .. link.link .. " ?") then
+	if not config.ask_for_confirmation or confirm("Visit " .. link.link .. " ?") then
 		fn.jobstart(string.format("%s %s", config.open_cmd, link.link), {
 			on_stderr = function(_, data)
 				local msg = table.concat(data or {}, "\n")
